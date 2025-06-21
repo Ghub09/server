@@ -1,10 +1,8 @@
-import mongoose from "mongoose";
-import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
+ import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 import FuturesTrade from "../models/FuturesTrade.js";
 import PerpetualTrade from "../models/PerpetualTrade.js";
 import Trade from "../models/Trade.js";
-import TradeHistory from "../models/TradeHistory.js";
- import Transaction from "../models/Transaction.js"; // Ensure you import the Transaction model
+import Transaction from "../models/Transaction.js"; // Ensure you import the Transaction model
 import User from "../models/User.js";
 import FuturesTradeSchema from "../models/FuturesTrade.js";
 import Wallet from "../models/Wallet.js";

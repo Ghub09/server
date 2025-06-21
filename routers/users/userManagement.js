@@ -10,5 +10,4 @@ router.delete("/delete/:_id", deleteUserAndArchive);
 router.put("/:id/toggle", toggleUserStatus);
 router.get("/:userId",  fetchUserWallets);
 router.put("/update/:userId",isAdminAuthenticated , updateUserWallets);
-// router.get('/messages/:userId/:targetId', getChatBetweenUsers);
 export default router;

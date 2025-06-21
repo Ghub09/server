@@ -1,7 +1,6 @@
 import User from "../models/User.js";
 import Wallet from "../models/Wallet.js";
 import Transaction from "../models/Transaction.js";
-import { validationResult } from "express-validator";
 import { generateToken } from "../utils/jwtToken.js";
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 import { v4 as uuidv4 } from "uuid";

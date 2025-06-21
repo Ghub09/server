@@ -7,7 +7,6 @@ import {
   deleteNews,
 } from "../controllers/newsController.js";
 import {
-  // isUserAuthenticated,
   isAdminAuthenticated,
 } from "../middlewares/auth.js";
 
@@ -15,7 +14,6 @@ const router = express.Router();
 
 // Public routes
 router.get("/", getAllNews);
-// router.get("/:id", getSingleNews);
 
 // Admin routes
 router.get("/admin", getAllNewsAdmin);
