@@ -33,8 +33,5 @@
     "server": "file:",
     "socket.io": "4.8.1",
     "uuid": "11.1.0"
-  },
-  "engines": {
-  "node": "20.x"
-}
+  }
 }
