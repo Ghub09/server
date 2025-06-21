@@ -4,11 +4,10 @@
   "description": "",
   "main": "server.js",
   "type": "module",
-"scripts": {
-  "start": "node server.js",
-  "render-build": "yarn install"
-}
-,
+  "scripts": {
+    "start": "node server.js",
+    "render-build": "yarn install"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +15,7 @@
     "axios": "1.7.9",
     "bcrypt": "5.1.1",
     "bcryptjs": "2.4.3",
+    "build": "^0.1.4",
     "cloudinary": "2.6.0",
     "cookie-parser": "1.4.7",
     "cors": "2.8.5",
