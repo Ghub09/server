@@ -50,71 +50,71 @@ const marketPrices = {};
 
 // 🔥 WebSocket: Connect to CryptoCompare (Avoid Binance Rate Limits)
 let ws;
-const connectWebSocket = () => {
-  try {
-    const tradingPairs = [
-      "BTC-USD",
-      "ETH-USD",
-      "BNB-USD",
-      "SOL-USD",
-      "XRP-USD",
-      "ADA-USD",
-      "DOGE-USD",
-      "MATIC-USD",
-      "DOT-USD",
-      "LTC-USD",
-    ];
-    const subs = tradingPairs.map(
-      (pair) => `5~CCCAGG~${pair.replace("-", "~")}~USD`
-    );
+// const connectWebSocket = () => {
+//   try {
+//     const tradingPairs = [
+//       "BTC-USD",
+//       "ETH-USD",
+//       "BNB-USD",
+//       "SOL-USD",
+//       "XRP-USD",
+//       "ADA-USD",
+//       "DOGE-USD",
+//       "MATIC-USD",
+//       "DOT-USD",
+//       "LTC-USD",
+//     ];
+//     const subs = tradingPairs.map(
+//       (pair) => `5~CCCAGG~${pair.replace("-", "~")}~USD`
+//     );
 
-    ws = new WebSocket("wss://streamer.cryptocompare.com/v2");
+//     ws = new WebSocket("wss://streamer.cryptocompare.com/v2");
 
-    ws.onopen = () => {
-      // console.log("🔗 Connected to CryptoCompare WebSocket");
+//     ws.onopen = () => {
+//       console.log("🔗 Connected to CryptoCompare WebSocket");
 
-      ws.send(
-        JSON.stringify({
-          action: "SubAdd",
-          subs,
-          api_key: process.env.CRYPTOCOMPARE_API_KEY,
-        })
-      );
-    };
+//       ws.send(
+//         JSON.stringify({
+//           action: "SubAdd",
+//           subs,
+//           api_key: process.env.CRYPTOCOMPARE_API_KEY,
+//         })
+//       );
+//     };
 
-    ws.onmessage = async (event) => {
-      try {
-        const data = JSON.parse(event.data);
-        if (data.TYPE === "5" && data.PRICE) {
-          const pair = `${data.FROMSYMBOL}USDT`;
-          const price = parseFloat(data.PRICE);
+//     ws.onmessage = async (event) => {
+//       try {
+//         const data = JSON.parse(event.data);
+//         if (data.TYPE === "5" && data.PRICE) {
+//           const pair = `${data.FROMSYMBOL}USDT`;
+//           const price = parseFloat(data.PRICE);
 
-          console.log(`📈 Market price update for ${pair}: ${price}`);
+//           console.log(`📈 Market price update for ${pair}: ${price}`);
 
-          marketPrices[pair] = price;
-          io.emit("marketPriceUpdate", { pair, price });
+//           marketPrices[pair] = price;
+//           io.emit("marketPriceUpdate", { pair, price });
 
-          await checkLiquidations(marketPrices);
-        }
-      } catch (error) {
-        console.error("⚠️ Error processing WebSocket message:", error);
-      }
-    };
+//           await checkLiquidations(marketPrices);
+//         }
+//       } catch (error) {
+//         console.error("⚠️ Error processing WebSocket message:", error);
+//       }
+//     };
 
-    ws.onerror = (error) => {
-      console.error("❌ CryptoCompare WebSocket Error:", error.message);
-    };
+//     ws.onerror = (error) => {
+//       console.error("❌ CryptoCompare WebSocket Error:", error.message);
+//     };
 
-    ws.onclose = () => {
-      console.warn("⚠️ WebSocket disconnected. Reconnecting in 5 seconds...");
-      setTimeout(connectWebSocket, 5000);
-    };
-  } catch (error) {
-    console.error("❌ Failed to connect WebSocket:", error.message);
-  }
-};
-// Start WebSocket connection
-connectWebSocket();
+//     ws.onclose = () => {
+//       console.warn("⚠️ WebSocket disconnected. Reconnecting in 5 seconds...");
+//       setTimeout(connectWebSocket, 5000);
+//     };
+//   } catch (error) {
+//     console.error("❌ Failed to connect WebSocket:", error.message);
+//   }
+// };
+// // Start WebSocket connection
+// connectWebSocket();
 
 // 🛠️ Fallback: REST API Fetch Every 30 Seconds (In Case WebSocket Fails)
 const fetchMarketPrices = async () => {
