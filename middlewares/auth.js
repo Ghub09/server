@@ -2,9 +2,6 @@ import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 import ErrorHandler from "../middlewares/errorMiddleware.js";
-
-// Helper to extract token from header (for optional unified use)
-// Example: extract token from cookies or Authorization header
 export const getTokenFromRequest = (req) => {
   let token = null;
 

@@ -30,10 +30,7 @@ const envPath = join(__dirname, "/config/config.env");
 config({ path: envPath });
 
 // Enhanced CORS configuration for Safari compatibility
-
-app.get("/", (req, res) => {
-  res.send("✅ Backend server is running.");
-});app.use(
+ app.use(
   cors({
     origin: [process.env.FRONTEND_URL],
     credentials: true,
