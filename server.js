@@ -49,7 +49,7 @@ export const emitTradeUpdate = (trade) => {
 const marketPrices = {};
 
 // 🔥 WebSocket: Connect to CryptoCompare (Avoid Binance Rate Limits)
-let ws;
+// let ws;
 // const connectWebSocket = () => {
 //   try {
 //     const tradingPairs = [

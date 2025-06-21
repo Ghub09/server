@@ -31,9 +31,11 @@ config({ path: envPath });
 
 // Enhanced CORS configuration for Safari compatibility
 
-app.use(
+app.get("/", (req, res) => {
+  res.send("✅ Backend server is running.");
+});app.use(
   cors({
-    origin: [process.env.FRONTEND_URL,"http://localhost:5173"],
+    origin: [process.env.FRONTEND_URL],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
