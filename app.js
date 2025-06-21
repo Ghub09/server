@@ -83,6 +83,8 @@ app.use("/api/news", newsRouter);
 // Wallet routes
 app.use("/api/wallet", walletRouter);
 
+
+
 dbConnection();
 
 export default app;

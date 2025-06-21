@@ -71,7 +71,7 @@ const connectWebSocket = () => {
     ws = new WebSocket("wss://streamer.cryptocompare.com/v2");
 
     ws.onopen = () => {
-      console.log("🔗 Connected to CryptoCompare WebSocket");
+      // console.log("🔗 Connected to CryptoCompare WebSocket");
 
       ws.send(
         JSON.stringify({
