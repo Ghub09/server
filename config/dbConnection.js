@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const dbConnection = () => {
   console.log(
-    "MONGODB_CONNECTION_STRING---",
+    "MONGODB_CONNECTION_STRING",
     process.env.MONGODB_CONNECTION_STRING
   );
   mongoose
