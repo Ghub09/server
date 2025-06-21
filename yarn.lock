@@ -1207,7 +1207,7 @@ node-fetch@^2.6.7:
   dependencies:
     whatwg-url "^5.0.0"
 
-nodemon@^3.1.9:
+nodemon@^3.1.10, nodemon@^3.1.9:
   version "3.1.10"
   resolved "https://registry.npmjs.org/nodemon/-/nodemon-3.1.10.tgz#5015c5eb4fffcb24d98cf9454df14f4fecec9bc1"
   integrity sha512-WDjw3pJ0/0jMFmyNDp3gvY2YizjLmmOUQo6DEBY+JgdvW/yQ9mEeSw6H5ythl5Ny2ytb7f9C2nIbjSxMNzbJXw==
@@ -1514,7 +1514,7 @@ serve-static@1.16.2:
     nodemon "^3.1.9"
     passport "0.7.0"
     passport-google-oauth20 "2.0.0"
-    server "file:C:/Users/sadaq/AppData/Local/Yarn/Cache/v6/npm-server-1.0.0-52614ade-01ff-4d71-a72b-4967cb14689e-1750481183331/node_modules/server"
+    server "file:C:/Users/sadaq/AppData/Local/Yarn/Cache/v6/npm-server-1.0.0-2f67dc16-7d93-437a-914e-9d21c46c1dc3-1750486326353/node_modules/server"
     socket.io "4.8.1"
     uuid "11.1.0"
 
