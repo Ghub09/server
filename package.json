@@ -4,10 +4,11 @@
   "description": "",
   "main": "server.js",
   "type": "module",
-  "scripts": {
-    "start": "node server.js",
-    "render-build": "yarn install && yarn build"
-  },
+"scripts": {
+  "start": "node server.js",
+  "render-build": "yarn install"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
