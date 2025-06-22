@@ -201,9 +201,7 @@ io.on("connection", (socket) => {
 
  // Start the server
 const PORT = process.env.PORT || 5000;
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
-
-server.listen(PORT, () => {
-  console.log(`🚀 Server prort=> ${PORT} Frontend URL=>${FRONTEND_URL}`);
- });
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
